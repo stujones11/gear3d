@@ -1,0 +1,10 @@
+Gears for Minetest [gear3d]
+===========================
+
+License Source Code: Copyright (c) 2019 stujones11, Stuart Jones - MIT
+
+License Media Files: Copyright (c) 2019 stujones11, Stuart Jones - CC BY-SA 4.0
+
+Textures based on minetest game default textures:
+
+Copyright (c) 2010-2012 celeron55, Perttu Ahola - CC BY-SA 3.0
