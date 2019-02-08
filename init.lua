@@ -78,16 +78,101 @@ minetest.register_node("gear3d:windsail_turning", {
 	groups = {choppy=2, oddly_breakable_by_hand=2},
 })
 
+local anim_gear_fwd = {
+	name = "gear3d_gear_fwd.png",
+	animation = {
+		type = "vertical_frames",
+		aspect_w = 16,
+		aspect_h = 16,
+		length = 2,
+	},
+}
+
+local anim_gear_rev = {
+	name = "gear3d_gear_rev.png",
+	animation = {
+		type = "vertical_frames",
+		aspect_w = 16,
+		aspect_h = 16,
+		length = 2,
+	},
+}
+
 minetest.register_node("gear3d:gear_fwd", {
-	description = "Gear turning",
+	description = "Gear forward turning",
 	tiles = {
 		{
-			name = "gear3d_gear_fwd.png",
+			name = "gear3d_gear_top_fwd.png",
 			animation = {
 				type = "vertical_frames",
 				aspect_w = 16,
 				aspect_h = 16,
 				length = 2,
+			},
+		},
+		anim_gear_fwd,
+		anim_gear_fwd,
+	},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	walkable = false,
+	groups = {choppy=2, oddly_breakable_by_hand=2},
+})
+
+minetest.register_node("gear3d:gear_rev", {
+	description = "Gear reverse turning",
+	tiles = {
+		{
+			name = "gear3d_gear_top_rev.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 2,
+			},
+		},
+		anim_gear_rev,
+		anim_gear_rev,
+	},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	walkable = false,
+	groups = {choppy=2, oddly_breakable_by_hand=2},
+})
+
+minetest.register_node("gear3d:spur_gear_rev", {
+	description = "Spur gear reverse turning",
+	drawtype = "mesh",
+	mesh = "gear3d_spur_gear.obj",
+	tiles = {
+		{
+			name = "gear3d_spur_gear_rev.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 240,
+				aspect_h = 16,
+				length = 4,
+			},
+		},
+	},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	walkable = false,
+	groups = {choppy=2, oddly_breakable_by_hand=2},
+})
+
+minetest.register_node("gear3d:spur_gear_fwd", {
+	description = "Spur gear forward turning",
+	drawtype = "mesh",
+	mesh = "gear3d_spur_gear.obj",
+	tiles = {
+		{
+			name = "gear3d_spur_gear_fwd.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 240,
+				aspect_h = 16,
+				length = 4,
 			},
 		},
 	},
